@@ -21,7 +21,7 @@ Remote file exists and could contain further links,
 but recursion is disabled -- not retrieving.
 ```
 
-RESULT
+RESULT \
 Failed
 
 
@@ -44,7 +44,7 @@ HTTP request sent, awaiting response... 404 Not Found
 2018-11-15 02:59:33 ERROR 404: Not Found.
 ```
 
- RESULT
+ RESULT \
  Failed
 
 ## 3. Testing user roles
@@ -58,7 +58,7 @@ OUTPUT
 
 ![screenshot](https://raw.githubusercontent.com/sayamkanwar/Fabrik_Tests/master/screenshots/Screenshot%202018-11-15%20at%203.40.20%20AM.png?token=AKWDIWOJZcWs7uJroDbMSs0jKdCXb3_zks5b9di2wA%3D%3D)
 
-RESULT
+RESULT \
 Failed
 
 ## 3. Identifying application entry point
@@ -99,7 +99,7 @@ Trying 0.0.0.0...
 * Connection #0 to host 0.0.0.0 left intact
 ```
 
-RESULT
+RESULT \
 Passed
 
 
