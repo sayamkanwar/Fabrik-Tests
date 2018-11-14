@@ -21,3 +21,23 @@ Remote file exists and could contain further links,
 but recursion is disabled -- not retrieving.
 ```
 
+
+## 2. Checking the server for metafiles
+
+
+  COMMAND
+
+````
+wget http://localhost:8000/robots.txt
+````
+
+OUTPUT
+
+```
+--2018-11-15 02:59:33--  http://localhost:8000/robots.txt
+Resolving localhost (localhost)... ::1, 127.0.0.1
+Connecting to localhost (localhost)|::1|:8000... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2018-11-15 02:59:33 ERROR 404: Not Found.
+```
+
