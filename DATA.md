@@ -21,11 +21,14 @@ Remote file exists and could contain further links,
 but recursion is disabled -- not retrieving.
 ```
 
+RESULT
+Failed
+
 
 ## 2. Checking the server for metafiles
 
 
-  COMMAND
+COMMAND
 
 ````
 wget http://localhost:8000/robots.txt
@@ -41,6 +44,9 @@ HTTP request sent, awaiting response... 404 Not Found
 2018-11-15 02:59:33 ERROR 404: Not Found.
 ```
 
+ RESULT
+ Failed
+
 ## 3. Testing user roles
 
 
@@ -52,9 +58,12 @@ OUTPUT
 
 ![screenshot](https://raw.githubusercontent.com/sayamkanwar/Fabrik_Tests/master/screenshots/Screenshot%202018-11-15%20at%203.40.20%20AM.png?token=AKWDIWOJZcWs7uJroDbMSs0jKdCXb3_zks5b9di2wA%3D%3D)
 
+RESULT
+Failed
+
 ## 3. Identifying application entry point
 
-I fetched the csrf token from /accounts/login/ from the csrf token cookie.
+I fetched the 'csrftoken' from /accounts/login/ from the csrf token cookie and inspected the source code of /accounts/login/ for the value of 'csrfmiddlewaretoken'.
 
 COMMAND
 ```
@@ -89,5 +98,8 @@ Trying 0.0.0.0...
 * Curl_http_done: called premature == 0
 * Connection #0 to host 0.0.0.0 left intact
 ```
+
+RESULT
+Passed
 
 
