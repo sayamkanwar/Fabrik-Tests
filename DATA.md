@@ -41,3 +41,13 @@ HTTP request sent, awaiting response... 404 Not Found
 2018-11-15 02:59:33 ERROR 404: Not Found.
 ```
 
+## 3. Testing user roles
+
+
+STEPS
+1. Logged in to a client account with the username 'sk'
+2. Tried to access /admin.
+
+OUTPUT
+
+
