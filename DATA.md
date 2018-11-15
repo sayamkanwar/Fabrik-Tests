@@ -122,6 +122,26 @@ PORT     STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds
 ```
 
+## 5. Checking for Certificate information, Weak Ciphers and SSL
 
+COMMAND
+```
+nmap --script ssl-cert,ssl-enum-ciphers -p 443,465,993,995 0.0.0.0
+```
 
+OUTPUT
+
+```
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-11-16 04:04 IST
+Nmap scan report for 0.0.0.0
+Host is up (0.00036s latency).
+
+PORT    STATE  SERVICE
+443/tcp closed https
+465/tcp closed smtps
+993/tcp closed imaps
+995/tcp closed pop3s
+
+Nmap done: 1 IP address (1 host up) scanned in 0.46 seconds
+```
 
