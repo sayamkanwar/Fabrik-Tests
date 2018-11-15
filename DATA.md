@@ -102,4 +102,26 @@ Trying 0.0.0.0...
 RESULT \
 Passed
 
+## 4. Identifying open ports
+
+COMMAND
+```
+nmap -p 8000 --open 0.0.0.0
+```
+
+OUTPUT
+
+```
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-11-16 03:46 IST
+Nmap scan report for 0.0.0.0
+Host is up (0.00019s latency).
+
+PORT     STATE SERVICE
+8000/tcp open  http-alt
+
+Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds
+```
+
+
+
 
