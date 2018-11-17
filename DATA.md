@@ -122,7 +122,7 @@ PORT     STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds
 ```
 
-Vulnerability \
+VULNERABILITY \
 False
 
 ## 5. Checking for Certificate information, Weak Ciphers and SSL
@@ -148,7 +148,7 @@ PORT    STATE  SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.46 seconds
 ```
 
-Vulnerability \
+VULNERABILITY \
 False
 
 ## 6. SQL Injection
@@ -251,7 +251,7 @@ Nmap done: 1 IP address (1 host up) scanned in 1.00 seconds
 
 TRACE method is supported which means HTTPOnly flag can be bypassed and the session cookie can be fetched through an XSS attack.
 
-Vulnerability \
+VULNERABILITY \
 True
 
 ## 7. Testing Buffer Overflow
@@ -280,6 +280,6 @@ OUTPUT
 curl: (52) Empty reply from server
 ```
 
-Vulnerability \
+VULNERABILITY \
 True
 
