@@ -164,7 +164,7 @@ The username and/or password you specified are not correct.
 I tried entering `` ') OR 1=1 -- `` to check if there was any encryption function called but it didn't work too.
 
 
-### SQLMAP ###
+#### SQLMAP ####
 
 COMMAND
 ````
