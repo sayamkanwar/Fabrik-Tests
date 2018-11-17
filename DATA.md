@@ -21,8 +21,8 @@ Remote file exists and could contain further links,
 but recursion is disabled -- not retrieving.
 ```
 
-RESULT \
-Failed
+VULNERABILITY \
+False
 
 
 ## 2. Checking the server for metafiles
@@ -44,8 +44,8 @@ HTTP request sent, awaiting response... 404 Not Found
 2018-11-15 02:59:33 ERROR 404: Not Found.
 ```
 
- RESULT \
- Failed
+ VULNERABILITY \
+ False
 
 ## 3. Testing user roles
 
@@ -58,8 +58,8 @@ OUTPUT
 
 ![screenshot](https://raw.githubusercontent.com/sayamkanwar/Fabrik_Tests/master/screenshots/Screenshot%202018-11-15%20at%203.40.20%20AM.png?token=AKWDIWOJZcWs7uJroDbMSs0jKdCXb3_zks5b9di2wA%3D%3D)
 
-RESULT \
-Failed
+VULNERABILITY \
+False
 
 ## 3. Identifying application entry point
 
@@ -99,8 +99,8 @@ Trying 0.0.0.0...
 * Connection #0 to host 0.0.0.0 left intact
 ```
 
-RESULT \
-Passed
+VULNERABILITY \
+True
 
 ## 4. Identifying open ports
 
@@ -218,5 +218,59 @@ how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] c
 [*] ending @ 08:55:12 /2018-11-17/
 ````
 
-RESULT \
-Failed
+VULNERABILITY \
+False
+
+## 7. Testing HTTP Methods
+
+COMMAND
+```
+nmap -p 8000 --script http-methods,http-trace --script-args http-methods.test-all=true 0.0.0.0
+```
+
+OUTPUT
+
+```
+Nmap scan report for 0.0.0.0
+Host is up (0.00020s latency).
+
+PORT     STATE SERVICE
+8000/tcp open  http-alt
+| http-methods: 
+|   Supported Methods: GET HEAD OPTIONS TRACE
+|_  Potentially risky methods: TRACE
+
+Nmap done: 1 IP address (1 host up) scanned in 1.00 seconds
+```
+
+TRACE method is supported which means HTTPOnly flag can be bypassed and the session cookie can be fetched through an XSS attack.
+
+Vulnerability \
+True
+
+## 7. Testing Buffer Overflow
+
+COMMAND
+```
+nmap -p 8000 --script http-methods,http-trace --script-args http-methods.test-all=true 0.0.0.0
+```
+
+OUTPUT
+
+```
+Nmap scan report for 0.0.0.0
+Host is up (0.00020s latency).
+
+PORT     STATE SERVICE
+8000/tcp open  http-alt
+| http-methods: 
+|   Supported Methods: GET HEAD OPTIONS TRACE
+|_  Potentially risky methods: TRACE
+
+Nmap done: 1 IP address (1 host up) scanned in 1.00 seconds
+```
+
+TRACE method is supported which means HTTPOnly flag can be bypassed and the session cookie can be fetched through an XSS attack.
+
+
+
