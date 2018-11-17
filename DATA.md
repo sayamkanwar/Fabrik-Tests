@@ -1,5 +1,5 @@
 
-## 1. Spidering
+## Spidering
 
 
   COMMAND
@@ -25,7 +25,7 @@ VULNERABILITY \
 False
 
 
-## 2. Checking the server for metafiles
+## Checking the server for metafiles
 
 
 COMMAND
@@ -47,7 +47,7 @@ HTTP request sent, awaiting response... 404 Not Found
  VULNERABILITY \
  False
 
-## 3. Testing user roles
+## Testing user roles
 
 
 STEPS
@@ -61,7 +61,7 @@ OUTPUT
 VULNERABILITY \
 False
 
-## 3. Identifying application entry point
+## Identifying application entry point
 
 I fetched the 'csrftoken' from /accounts/login/ from the csrf token cookie and inspected the source code of /accounts/login/ for the value of 'csrfmiddlewaretoken'.
 
@@ -102,7 +102,7 @@ Trying 0.0.0.0...
 VULNERABILITY \
 True
 
-## 4. Identifying open ports
+## Identifying open ports
 
 COMMAND
 ```
@@ -125,7 +125,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds
 VULNERABILITY \
 False
 
-## 5. Checking for Certificate information, Weak Ciphers and SSL
+## Checking for Certificate information, Weak Ciphers and SSL
 
 COMMAND
 ```
@@ -151,7 +151,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.46 seconds
 VULNERABILITY \
 False
 
-## 6. SQL Injection
+## SQL Injection
 
 I entered the username 'sk' as it was already registered and in the password field, I entered `` ' OR 1=1 -- ``.
 
@@ -227,7 +227,7 @@ how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] c
 VULNERABILITY \
 False
 
-## 7. Testing HTTP Methods
+## Testing HTTP Methods
 
 COMMAND
 ```
@@ -254,7 +254,7 @@ TRACE method is supported which means HTTPOnly flag can be bypassed and the sess
 VULNERABILITY \
 True
 
-## 7. Testing Buffer Overflow
+## Testing Buffer Overflow
 
 I passed an arbitarily large string through the checkLogin API in the username variable and it resulted in buffer overflow.
 
@@ -283,3 +283,22 @@ curl: (52) Empty reply from server
 VULNERABILITY \
 True
 
+## Testing HTTP Headers
+
+COMMAND
+```
+curl -I 0.0.0.0:8000
+```
+
+OUTPUT
+
+```
+HTTP/1.1 200 OK
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html; charset=utf-8
+```
+
+X-XSS-Protection header is not set which makes it vulnerable to XSS attacks.
+
+VULNERABILITY \
+True
