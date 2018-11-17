@@ -218,5 +218,5 @@ how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] c
 [*] ending @ 08:55:12 /2018-11-17/
 ````
 
-RESULT
+RESULT \
 Failed
