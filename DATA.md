@@ -145,3 +145,15 @@ PORT    STATE  SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.46 seconds
 ```
 
+## 6. SQL Injection
+
+I entered the username 'sk' as it was already registered and in the password field, I entered `` ' OR 1=1 -- ``.
+
+OUTPUT
+
+```
+The username and/or password you specified are not correct.
+```
+
+I tried entering `` ') OR 1=1 -- `` to check if there was any encryption function called but it didn't work too.
+
